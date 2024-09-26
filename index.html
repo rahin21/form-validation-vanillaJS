@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body
+    class="flex justify-center items-center h-screen text-xl relative overflow-hidden"
+  >
+    <img
+      src="bgImage.jpg"
+      alt="background Image"
+      class="absolute -z-10 w-full h-full object-cover"
+    />
+    <form
+      class="backdrop-blur-lg border-2 border-white p-12 flex flex-col gap-5 rounded-lg"
+      onsubmit="formValidation(event)"
+      novalidate
+    >
+      <h1 class="text-2xl font-semibold text-center">Form Validation</h1>
+      <div id="input-field" class="flex flex-col">
+        <label for="name" class="font-medium">Name</label>
+        <input
+          type="text"
+          placeholder="Enter Your Name"
+          id="name"
+          class="rounded-lg py-2 px-4 lg:w-[20rem] text-[#00393B]"
+        />
+        <p class="text-rose-500 text-sm font-medium" id="name-error"></p>
+      </div>
+      <div id="input-field" class="flex flex-col">
+        <label for="email" class="font-medium">Email</label>
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          id="email"
+          class="rounded-lg py-2 px-4 lg:w-[20rem] text-[#00393B]"
+        />
+        <p class="text-rose-500 text-sm font-medium" id="email-error"></p>
+      </div>
+      <div id="input-field" class="flex flex-col relative">
+        <label for="password" class="font-medium">Password</label>
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          id="password"
+          class="rounded-lg py-2 px-4 lg:w-[20rem] text-[#00393B]"
+        />
+        <button type="button" class="absolute right-3" onclick="showPassword()">
+          <i class="fa fa-eye mt-10" style="font-size: 24px"></i>
+        </button>
+        <p
+          class="text-rose-500 text-sm font-medium break-words whitespace-normal"
+          id="password-error"
+        ></p>
+      </div>
+
+      <div id="input-field" class="" class="flex flex-col">
+        <p class="font-medium">Select Gender</p>
+        <div class="flex gap-2 items-center">
+          <div>
+            <label for="gender-male">Male</label>
+            <input
+              type="radio"
+              id="gender-male"
+              class="rounded-lg py-2 px-4"
+              value="male"
+              name="gender"
+            />
+          </div>
+
+          <div>
+            <label for="gender-female">Female</label>
+            <input
+              type="radio"
+              id="gender-female"
+              class="rounded-lg py-2 px-4"
+              value="female"
+              name="gender"
+            />
+          </div>
+
+          <div>
+            <label for="gender-3rd">3rd Gender</label>
+            <input
+              type="radio"
+              id="gender-3rd"
+              class="rounded-lg py-2 px-4"
+              value="gender3rd"
+              name="gender"
+            />
+          </div>
+        </div>
+        <p class="text-rose-500 text-sm font-medium" id="gender-error"></p>
+      </div>
+      <div class="flex justify-end">
+        <button
+          class="bg-[#00393B] text-white rounded-lg w-fit px-4 py-2 font-medium drop-shadow-lg"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </body>
+  <script src="script.js"></script>
+</html>
