@@ -66,7 +66,7 @@
         <p class="font-medium">Select Gender</p>
         <div class="flex gap-2 items-center">
           <div>
-            <label for="gender-male" class=" md:text-lg text-sm">Male</label>
+            <label for="gender-male" class="md:text-lg text-sm">Male</label>
             <input
               type="radio"
               id="gender-male"
@@ -77,7 +77,7 @@
           </div>
 
           <div>
-            <label for="gender-female" class=" md:text-lg text-sm">Female</label>
+            <label for="gender-female" class="md:text-lg text-sm">Female</label>
             <input
               type="radio"
               id="gender-female"
@@ -88,7 +88,9 @@
           </div>
 
           <div>
-            <label for="gender-3rd" class=" md:text-lg text-sm">3rd Gender</label>
+            <label for="gender-3rd" class="md:text-lg text-sm"
+              >3rd Gender</label
+            >
             <input
               type="radio"
               id="gender-3rd"
@@ -108,6 +110,37 @@
         </button>
       </div>
     </form>
+    <div
+      id="toaster"
+      class="absolute overflow-hidden bg-white bottom-10 right-10 p-10 rounded-lg transition-all ease-in duration"
+    >
+      <p class="font-medium">✅ Submission Successfull</p>
+      <p class="font-medium">🤖 Please check the Console</p>
+      <div class="z-100">
+        <div
+          id="progress"
+          class="h-[100%] mt-8 bg-green-500 absolute left-0"
+        ></div>
+      </div>
+    </div>
   </body>
+  <style>
+    #toaster {
+      transform: translateX(400px); /* To hide the toaster initially */
+    }
+
+    #progress {
+      animation: none; /* Initially, no animation is triggered */
+    }
+
+    @keyframes animate {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
   <script src="script.js"></script>
 </html>
